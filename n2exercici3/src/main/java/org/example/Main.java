@@ -1,7 +1,7 @@
 package org.example;
 
 public class Main {
-    static void main() {
+    public static void main(String[] args) {
         float a = 5.3F;
         float b = 6.5F;
         Operation sum = () -> a + b;
