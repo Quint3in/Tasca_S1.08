@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    static void main() {
+    public static void main(String[] args) {
         List<String> months = new ArrayList<>(
                 List.of("Enero", "Febrero", "Marzo",
                         "Abril", "Mayo", "Junio", "Julio",
