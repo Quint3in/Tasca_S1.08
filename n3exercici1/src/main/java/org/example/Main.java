@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
+        //Crear otr clase con la lista de estudiantes y crear métodos para cada uno de los filtros
         List<Student> students = new ArrayList<>(
                 List.of(
                         new Student("Maria",20,"PHP",10),
@@ -22,6 +24,7 @@ public class Main {
         System.out.println("--------------------------------------------------------");
         System.out.println("Students lista:");
         students.forEach(student -> {System.out.println(student.getName()+":"+student.getAge());});
+
         System.out.println("--------------------------------------------------------");
         System.out.println("Nombre empieza por a:");
         List<Student> aStudents = students.stream()
@@ -34,6 +37,7 @@ public class Main {
         students.stream()
                 .filter(student -> student.getGrade()>=5)
                 .forEach(System.out::println);
+
         System.out.println("--------------------------------------------------------");
         System.out.println("Nota mayor igual 5 y no son de PHP:");
         students.stream()

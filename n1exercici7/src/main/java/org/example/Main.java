@@ -10,8 +10,7 @@ public class Main {
                 List.of("coche","casa","uno","y","no")
         );
         words.stream().sorted(
-                Comparator.comparing(String::length).reversed()
-                )
+                Comparator.comparing(String::length).reversed())
                 .forEach(System.out::println);
     }
 }

@@ -4,6 +4,7 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,9 +12,11 @@ public class Main {
                 List.of("Casa", "Coche", "Palabra", "Ópera","Baloncesto","Fórmula")
         );
 
-        words.stream()
+        List<String> mutableWords = words.stream()
                 .filter(word -> word.length() > 5 && normalize(word).contains("o"))
-                .forEach(System.out::println);
+                .collect(Collectors.toList());
+
+        mutableWords.forEach(System.out::println);
     }
 
     private static String normalize(String input) {

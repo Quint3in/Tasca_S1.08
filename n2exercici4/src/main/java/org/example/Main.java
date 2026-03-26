@@ -3,26 +3,23 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.example.WordListProcessor.*;
+
 public class Main {
     public static void main(String[] args) {
         List<String> words = new ArrayList(
                 List.of("valor","espina","43")
         );
+        System.out.println("Ordenado por primer caracter");
+        sortByFirstCharacter(words).forEach(System.out::println);
 
+        System.out.println("Ordenado por palabras que contienen e primero");
+        sortByWordsWithE(words).forEach(System.out::println);
 
-        words.sort(
-                (s1,s2) -> Character.compare(s1.charAt(0),s2.charAt(0))
-        );
-        words.sort(
-                (s1,s2) -> Boolean.compare(!s1.contains("e"),!s2.contains("e"))
-        );
-        words.replaceAll( s -> s.contains("a") ? s.replace("a","4") : s);
+        System.out.println("Reemplazar las A por 4");
+        replaceAWith4(words).forEach(System.out::println);
 
-        words.forEach(System.out::println);
-
-        System.out.println("----------------------");
-        words.stream()
-                .filter(s -> s.matches("\\d+"))
-                .forEach(System.out::println);
+        System.out.println("Mostrar solo dígitos númericos");
+        filterByDigits(words).forEach(System.out::println);
     }
 }
